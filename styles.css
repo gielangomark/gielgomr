@@ -368,6 +368,10 @@ header.scrolled {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+     header{
+       position: absolute;
+    }
+    
     .navlist {
         display: none;
         flex-direction: column;
