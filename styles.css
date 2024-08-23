@@ -320,7 +320,7 @@ header.scrolled {
 
     .box-menu:hover{
         transform: rotateY('angle');
-        color: blue;
+        color: #BDE8CA;
     }
 
 
