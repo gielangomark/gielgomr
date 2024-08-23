@@ -277,6 +277,72 @@ header.scrolled {
     transform: scale(1.05);
 }
 
+/* Footer Styles */
+.footer {
+    background-color: var(--secont-bg-color);
+    color: var(--text-color);
+    padding: 20px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-content div {
+    width: 45%;
+}
+
+.footer-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    margin-top: 200px;
+    color: var(--text-color);
+    font-size: 34px;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+
 /* Animations */
 .reveal {
     opacity: 0;
@@ -308,25 +374,53 @@ header.scrolled {
         position: absolute;
         top: 70px;
         right: 0;
-        width: 100%;
-        background-color: var(--bg-color);
+        width: auto;
         padding: 20px;
-        text-align: center;
+        text-align: right;
+        transition: all 0.3s ease-in-out;
     }
 
-    .box-menu {
-        display: block;
+    .navlist li{
+        padding: 5px;
     }
-
-    .box-menu:hover{
-        transform: rotateY('angle');
-        color: #BDE8CA;
-    }
-
 
     .navlist.active {
         display: flex;
     }
+
+    .navlist.active {
+        opacity: 0; /* Mulai dengan opacity 0 */
+        transform: translateY(-20px); /* Posisi naik sedikit */
+        display: flex;
+        animation: slideDown 0.5s forwards; /* Animasi saat muncul */
+    }
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .box-menu {
+        font-size: 42px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease;
+    }
+
+
+    .box-menu.open {
+        transform: rotate(90deg); 
+        transition: transform 0.3s ease;
+    }
+    
 
     .hero {
         flex-direction: column-reverse; /* Change the order of elements */
