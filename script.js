@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Intersection Observer for fade-in effect
     const elements = document.querySelectorAll('.fade-in');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Menghentikan observasi setelah animasi diterapkan
+                observer.unobserve(entry.target); // Stop observing after animation is applied
             }
         });
-    }, { threshold: 0.1 }); // Menyesuaikan threshold sesuai kebutuhan
+    }, { threshold: 0.1 }); // Adjust threshold as needed
 
     elements.forEach(element => {
         observer.observe(element);
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    // Header background change on scroll
     const header = document.querySelector('header');
     const scrollThreshold = 50; // Adjust this value to determine when the background should appear
 
@@ -26,13 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove('scrolled');
         }
     });
-});
 
-const menuIcon = document.getElementById('menuIcon');
+    // Toggle Navbar and Icon Animation on Menu Icon Click
+    const menuIcon = document.getElementById('menuIcon');
     const navList = document.querySelector('.navlist');
 
-    // Add event listener to the menu icon
+    // Add event listener to the menu icon for toggling nav and animation
     menuIcon.addEventListener('click', function() {
-        // Toggle the 'active' class on the nav list
         navList.classList.toggle('active');
+        menuIcon.classList.toggle('open'); // Toggle class for animation
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navList.contains(event.target) && !menuIcon.contains(event.target)) {
+            navList.classList.remove('active');
+            menuIcon.classList.remove('open');
+        }
+    });
+});
