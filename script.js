@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Function to hide the loading screen and show the main content
+    function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
+        
+        loadingScreen.style.display = 'none'; // Hide loading screen
+        mainContent.style.display = 'block'; // Show main content
+    }
+
+    // Simulate a delay for loading screen
+    setTimeout(hideLoadingScreen, 2000); // Adjust the time (in milliseconds) as needed
+
     // Intersection Observer for fade-in effect
     const elements = document.querySelectorAll('.fade-in');
 
@@ -31,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.getElementById('menuIcon');
     const navList = document.querySelector('.navlist');
 
-    // Add event listener to the menu icon for toggling nav and animation
     menuIcon.addEventListener('click', function() {
         navList.classList.toggle('active');
         menuIcon.classList.toggle('open'); // Toggle class for animation
