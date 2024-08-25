@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Simulate a delay for loading screen
-    setTimeout(hideLoadingScreen, 2000); // Adjust the time (in milliseconds) as needed
+    setTimeout(hideLoadingScreen, 3000); // Adjust the time (in milliseconds) as needed
 
     // Intersection Observer for fade-in effect
     const elements = document.querySelectorAll('.fade-in');
