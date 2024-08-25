@@ -10,7 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="loading()">
+    <!-- Preloader -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation Bar -->
     <header>
         <div class="logo">GIEE</div>
@@ -95,12 +100,14 @@
         <div class="education">
             <h3>Riwayat Pendidikan</h3>
             <ul>
-                <li>SD  - SDN UTAN KAYU 17 PAGI</li>
+                <li>SDN UTAN KAYU 17 PAGI</li>
+                <p>2014 - 2020</p>
                 <br>
-                <li>SMP - SMPN 97 JAKARTA</li>
+                <li>SMPN 97 JAKARTA</li>
+                <p>2020 - 2023</p>
                 <br>
-                <li>SMK - SMKN 40 JAKARTA</li>
-                <!-- Tambahkan riwayat pendidikan lainnya di sini -->
+                <li>SMKN 40 JAKARTA</li>
+                <p>2023 - Sekarang</p>
             </ul>
         </div>
         <div class="contact">
