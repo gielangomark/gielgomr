@@ -482,6 +482,7 @@ header.scrolled {
 
     .content .btn {
         margin-top: 20px;
+        align-self: center;
     }
 
     .Judul{
