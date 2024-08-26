@@ -16,7 +16,7 @@
     width: 50px;
     height: 50px;
     border: 5px solid rgba(252, 249, 249, 0.3);
-    border-top-color: #fff;
+    border-top-color: #deebdb;
     border-radius: 50%;
     animation: spin 0.3s linear infinite;
 }
@@ -395,8 +395,98 @@ header.scrolled {
     transform: translateY(0);
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+/* Responsif untuk layar dengan lebar 1280px */
+@media (max-width: 960px) {
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%; /* Adjust padding */
+    }
+
+    .logo {
+        font-size: 22px; /* Adjust logo size */
+    }
+
+    .navlist a {
+        font-size: 0.9rem; /* Adjust font size for navigation links */
+        margin: 0 30px; /* Adjust margin between navigation links */
+    }
+
+    .box-menu {
+        font-size: 36px; /* Adjust size of box menu icon */
+    }
+
+    .hero {
+        padding: 0 4%; /* Adjust padding */
+        flex-direction: column-reverse; /* Change the order of elements */
+        text-align: center; /* Center the content */
+    }
+
+    .content {
+        max-width: 60%;
+        margin-left: 0; /* Reset margin */
+    }
+
+    .hero h1 {
+        font-size: 42px; /* Adjust font size */
+    }
+
+    .hero p {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .hero .image {
+        width: 100%; /* Adjust image container width */
+        padding: 20px 0; /* Add padding around the image */
+        justify-content: center; /* Center the image */
+    }
+
+    .hero .image img {
+        width: 350px; /* Adjust image size */
+        margin-top: 700px; /* Remove margin-top */
+        border-radius: 50%; /* Maintain circular shape */
+    }
+
+    .content .btn {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .services-container {
+        gap: 15px; /* Adjust gap between service items */
+        margin-top: 30px; /* Adjust top margin */
+    }
+
+    .service {
+        width: 45%; /* Adjust width of service items */
+    }
+
+    .portfolio-container {
+        gap: 30px; /* Adjust gap between portfolio items */
+    }
+
+    .portfolio-item {
+        width: 90%; /* Adjust width of portfolio items */
+    }
+
+    .footer {
+        padding: 15px 8%; /* Adjust padding */
+    }
+
+    .footer-content div {
+        width: 48%; /* Adjust width of footer content */
+    }
+
+    .social-icon {
+        font-size: 30px; /* Adjust size of social icons */
+    }
+}
+
+
+/* responsif hp */
+@media (max-width: 760px) {
 
     header{
        position: absolute;
@@ -484,7 +574,6 @@ header.scrolled {
         margin-top: 20px;
         align-self: center;
     }
-
     .Judul{
         margin-top: 100px;
     }
@@ -498,6 +587,8 @@ header.scrolled {
     }
 
     .judul-porto{
-        font-size: 28px;
+        font-size: 20px;
+        font-family: poppins;
+        font-weight: bold;
     }
 }
