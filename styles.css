@@ -175,7 +175,7 @@ header.scrolled {
 }
 
 .hero .image:hover img {
-    box-shadow: 0 0 100px #7956da;
+    box-shadow: 0 0 100px var(--main-color);
     transform: translateY(-8px);
 }
 
