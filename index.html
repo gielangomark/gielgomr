@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body onload="loading()">
     <!-- Preloader -->
@@ -16,84 +17,105 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">GIEE</div>
-        <div class="box-menu" id="menuIcon"><i class='bx bx-menu'></i></div>
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-    </header>
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Navigation Bar -->
+        <header>
+            <div class="logo">GIEE</div>
+            <div class="box-menu" id="menuIcon"><i class='bx bx-menu'></i></div>
+            <ul class="navlist">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+        </header>
 
-    <!-- Home Section -->
-    <section id="home" class="section hero">
-        <div class="content fade-in">
-            <h1>Hello, I'm <br><span class="name">GIELANG OMAR</span></h1>
-            <p>Business Enthusiast - Developing - Investing</p>
-            <a href="#portfolio" class="btn">My Works</a>
-        </div>
-        <div class="image"><img src="image/Foto-Profile.jpeg" alt=""></div>
-    </section>
+        <!-- Home Section -->
+        <section id="home" class="section hero">
+            <div class="content fade-in">
+                <h1>Hello, I'm <br><span class="name">GIELANG OMAR</span></h1>
+                <p>Business Enthusiast - Developing - Investing</p>
+                <a href="#portfolio" class="btn">My Works</a>
+            </div>
+            <div class="image"><img src="image/Foto-Profile.jpeg" alt=""></div>
+        </section>
+        <hr>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2 class="Judul fade-in">My Services</h2>
-        <div class="services-container">
-            <div class="service fade-in">
-                <i class='bx bx-candles'></i>
-                <h3>Investing Academy</h3>
-                <p>Invest Academy provides comprehensive financial education and investment training...</p>
-                <a href="#" class="s-btnn">Learn More</a>
-            </div>
-            <div class="service fade-in">
-                <i class='bx bx-code'></i>
-                <h3>Web Development</h3>
-                <p>Develops and maintains websites using various programming languages and web technologies...</p>
-                <a href="#" class="s-btnn">Learn More</a>
-            </div>
-            <div class="service fade-in">
-                <i class='bx bxs-business'></i>
-                <h3>Business Consultant</h3>
-                <p>Analyzes business needs and implements effective technological or business strategies...</p>
-                <a href="#" class="s-btnn">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <h2 class="judul-porto">MY PORTFOLIO</h2>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <h3>Gielang Cafe</h3>
-                <div class="portfolio-images">
-                    <img src="image/Project 1 (1).PNG" alt="Project 1 Image 1">
-                    <br>
-                    <img src="image/Project 1 (2).PNG" alt="Project 1 Image 2">
-                    <br>
-                    <img src="image/Project 1 (3).PNG" alt="Project 1 Image 3">
-                    <a href="https://gielangomark.github.io/Gielang-Cafe/index.html" target="_blank" class="btn-port">Kunjungi</a>
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h2 class="Judul fade-in">My Services</h2>
+            <div class="services-container">
+                <div class="service fade-in">
+                    <i class='bx bx-candles'></i>
+                    <h3>Investing Academy</h3>
+                    <p>Invest Academy provides comprehensive financial education and investment training...</p>
+                    <a href="#" class="s-btnn">Learn More</a>
+                </div>
+                <div class="service fade-in">
+                    <i class='bx bx-code'></i>
+                    <h3>Web Development</h3>
+                    <p>Develops and maintains websites using various programming languages and web technologies...</p>
+                    <a href="#" class="s-btnn">Learn More</a>
+                </div>
+                <div class="service fade-in">
+                    <i class='bx bxs-business'></i>
+                    <h3>Business Consultant</h3>
+                    <p>Analyzes business needs and implements effective technological or business strategies...</p>
+                    <a href="#" class="s-btnn">Learn More</a>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <h3>Landing Page Portofolio</h3>
-                <div class="portfolio-images">
-                    <img src="image/Project 2 (1).PNG" alt="Project 2 Image 1">
-                    <a href="#" class="btn-port">Kunjungi</a>
+        </section>
+
+        <section id="Gallery" class="section">
+            <h2 class="judul-gallery">GALLERY</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <a target="_blank" href="img_5terre.jpg">
+                        <img src="image/WhatsApp Image 2024-09-23 at 10.46.55.jpeg" alt="Cinque Terre">
+                    </a>
+                    <div class="desc">Add a description of the image here</div>
+                </div>
+                <div class="gallery-item">
+                    <a target="_blank" href="img_forest.jpg">
+                        <img src="image/WhatsApp Image 2024-09-23 at 10.46.30.jpeg" alt="Forest">
+                    </a>
+                    <div class="desc">Add a description of the image here</div>
+                </div>
+                <div class="gallery-item">
+                    <a target="_blank" href="img_mountains.jpg">
+                        <img src="image/WhatsApp Image 2024-09-23 at 10.48.39.jpeg" alt="Mountains">
+                    </a>
+                    <div class="desc">Add a description of the image here</div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <h3>Website Pribadi</h3>
-                <div class="portfolio-images">
-                    <img src="image/Project 3 (1).PNG" alt="Project 3 Image 1">
-                    <a href="#" class="btn-port">kunjungi</a>
+        </section>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section section">
+            <h2 class="judul-porto">My Portfolio</h2>
+            <div class="portfolio-slider-container">
+                <div class="portfolio-slider">
+                    <div class="portfolio-item">
+                        <img src="image/Project 1 (1).PNG" alt="Portfolio 1">
+                        <div class="overlay"><span>Project 1</span></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="image/Project 2 (1).PNG" alt="Portfolio 2">
+                        <div class="overlay"><span>Project 2</span></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="image/Project 3 (1).PNG" alt="Portfolio 3">
+                        <div class="overlay"><span>Project 3</span></div>
+                    </div>
                 </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev" onclick="prevSlide()">‹</button>
+                <button class="next" onclick="nextSlide()">›</button>
             </div>
         </div>
-    </section>
-
+        
     <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-content">
@@ -130,8 +152,6 @@
     </div>
 </footer>
 
-
     <script src="script.js"></script>
 </body>
 </html>
- 
