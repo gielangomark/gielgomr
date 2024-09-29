@@ -1,15 +1,16 @@
 /* Preloader Styles */
 #loading-screen {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .spinner {
@@ -114,7 +115,7 @@ header.scrolled {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Ganti justify-content menjadi center */
     padding: 0 5%;
     position: relative;
 }
@@ -122,7 +123,7 @@ header.scrolled {
 .content {
     max-width: 50%;
     text-align: left;
-    margin-left: 100px;
+    margin-left: 50px; /* Kurangi margin-left agar tidak terlalu jauh */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,6 +132,7 @@ header.scrolled {
 .hero h1 {
     font-size: 48px;
     margin: 0;
+    margin-top: 20px;
 }
 
 .hero .name {
@@ -146,7 +148,8 @@ header.scrolled {
 
 .content .btn {
     margin-top: 20px;
-    padding: 10px 20px;
+    margin-bottom: 40px;
+    padding: 10px 25px;
     background-color: #f53b57;
     color: #fff;
     text-decoration: none;
@@ -156,21 +159,24 @@ header.scrolled {
 }
 
 .content .btn:hover {
-    background-color: var(--secont-bg-color);
+    background-color: #633939;
     transform: scale(1.05);
+    background-position: left bottom;
 }
 
 .hero .image {
-    padding: 50px;
+    padding: 10px; /* Kurangi padding dari 30px ke 10px */
     width: 50%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .hero .image img {
     height: auto;
     border-radius: 50%;
-    width: 400px;
+    width: 300px;
+    margin-top: 10px; /* Kurangi margin-top dan margin-bottom */
+    margin-bottom: 10px;
     transition: 0.3s ease;
 }
 
@@ -242,71 +248,135 @@ header.scrolled {
     transform: translateY(-8px);
 }
 
-/* Portfolio Section */
-#portfolio {
-    margin-top: 100px;
+/* General Section Styling */
+.section {
     padding: 50px 0;
-    width: 100%;
+}
+
+.judul-gallery{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Gallery Layout */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
     text-align: center;
 }
 
-.judul-porto {
-    font-size: 3.5rem;
-    margin-bottom: 40px;
-    color: var(--second-color);
+.gallery-item img {
+    width: 350px    ;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio-container {
+.desc {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+
+
+/* Portfolio Section */
+/* Container slider lebih kecil */
+
+.judul-porto {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.portfolio-slider-container {
+    width: 60%; /* Sesuaikan ukuran total slider */
+    margin: 0 auto;
+}
+
+.portfolio-slider {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+   transition: transform 0.5s ease-in-out;
+   width: 300%;
 }
 
 .portfolio-item {
-    width: 80%;
-    max-width: 1000px;
-    background-color: #2e2222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    text-align: center;
-    color: #fff;
+    min-width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.portfolio-images {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.portfolio-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.btn-port {
-    margin-top: 20px;
-    color: #fffffff6;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    background-color: var(--main-color);
-    width: 150px;
+.portfolio-item img {
+    overflow: hidden;
     padding: 10px;
-    font-size: 14px;
-    margin: 0 auto;
-    display: block;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.btn-port:hover {
-    background-color: #29b9cca8;
-    transform: scale(1.05);
+/* Efek hover pada gambar */
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(153, 61, 61, 0.892);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* Footer Styles */
+.portfolio-item:hover .overlay {
+    opacity: 1;
+    box-shadow: 0 0 15px var(--main-color);
+    transform: translateY(-2px);
+}
+
+.portfolio-item .overlay span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Kontrol slider di bawah gambar */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button.prev, button.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Mengatur ukuran tombol lebih kecil */
+button.prev, button.next {
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
 .footer {
     background-color: var(--secont-bg-color);
     color: var(--text-color);
@@ -325,7 +395,8 @@ header.scrolled {
 }
 
 .footer-content div {
-    width: 45%;
+    flex: 1 1 300px;
+    margin: 0 10px;
 }
 
 .footer-content h3 {
@@ -342,24 +413,13 @@ header.scrolled {
     margin-bottom: 5px;
 }
 
-.footer-bottom {
-    text-align: center;
-}
-
-.footer-bottom p {
-    font-size: 0.875rem;
-    margin: 0;
-}
-
-/* Social Media Icons */
 .social-media {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: center; /* Center the icons */
+    margin: 10px 0; /* Space around the icons */
 }
 
 .social-icon {
-    margin-top: 200px;
     color: var(--text-color);
     font-size: 34px;
     margin: 0 10px;
@@ -370,6 +430,17 @@ header.scrolled {
     color: var(--main-color);
     transform: scale(1.1);
 }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px; /* Space above copyright */
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
 
 
 /* Animations */
@@ -395,98 +466,11 @@ header.scrolled {
     transform: translateY(0);
 }
 
-/* Responsif untuk layar dengan lebar 1280px */
-@media (max-width: 960px) {
 
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        padding: 15px 8%; /* Adjust padding */
-    }
-
-    .logo {
-        font-size: 22px; /* Adjust logo size */
-    }
-
-    .navlist a {
-        font-size: 0.9rem; /* Adjust font size for navigation links */
-        margin: 0 30px; /* Adjust margin between navigation links */
-    }
-
-    .box-menu {
-        font-size: 36px; /* Adjust size of box menu icon */
-    }
-
-    .hero {
-        padding: 0 4%; /* Adjust padding */
-        flex-direction: column-reverse; /* Change the order of elements */
-        text-align: center; /* Center the content */
-    }
-
-    .content {
-        max-width: 60%;
-        margin-left: 0; /* Reset margin */
-    }
-
-    .hero h1 {
-        font-size: 42px; /* Adjust font size */
-    }
-
-    .hero p {
-        font-size: 20px; /* Adjust font size */
-    }
-
-    .hero .image {
-        width: 100%; /* Adjust image container width */
-        padding: 20px 0; /* Add padding around the image */
-        justify-content: center; /* Center the image */
-    }
-
-    .hero .image img {
-        width: 350px; /* Adjust image size */
-        margin-top: 700px; /* Remove margin-top */
-        border-radius: 50%; /* Maintain circular shape */
-    }
-
-    .content .btn {
-        margin-top: 20px;
-        align-self: center;
-    }
-
-    .services-container {
-        gap: 15px; /* Adjust gap between service items */
-        margin-top: 30px; /* Adjust top margin */
-    }
-
-    .service {
-        width: 45%; /* Adjust width of service items */
-    }
-
-    .portfolio-container {
-        gap: 30px; /* Adjust gap between portfolio items */
-    }
-
-    .portfolio-item {
-        width: 90%; /* Adjust width of portfolio items */
-    }
-
-    .footer {
-        padding: 15px 8%; /* Adjust padding */
-    }
-
-    .footer-content div {
-        width: 48%; /* Adjust width of footer content */
-    }
-
-    .social-icon {
-        font-size: 30px; /* Adjust size of social icons */
-    }
-}
 
 
 /* responsif hp */
-@media (max-width: 760px) {
+@media (max-width: 768px) {
 
     header{
        position: absolute;
@@ -510,11 +494,18 @@ header.scrolled {
         font-size: 5px;
     }
 
+    .navlist a{
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
     .navlist.active {
         display: flex;
     }
 
     .navlist.active {
+        top: 50px;
+        right: 20px;
         opacity: 0; /* Mulai dengan opacity 0 */
         transform: translateY(-20px); /* Posisi naik sedikit */
         display: flex;
@@ -533,7 +524,7 @@ header.scrolled {
     }
 
     .box-menu {
-        font-size: 42px;
+        font-size: 36px;
     color: var(--text-color);
     z-index: 10001;
     cursor: pointer;
@@ -554,27 +545,44 @@ header.scrolled {
     }
 
     .content {
+        margin-top: 20px;
         max-width: 100%;
         margin-left: 0;
+        text-align: center;
     }
 
     .hero .image {
-        width: 100%
+        width: 100%;
+        padding: 20px 0; /* Add padding around the image */
         justify-content: center; /* Center the image */
     }
 
     .hero .image img {
-        margin-top: 100px;
-        width: 60%; /* Adjust the size of the image */
+        width: 220px; /* Adjust the size of the image */
         border-radius: 50%;
+        padding: 20px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .hero h1{
+        font-size: 32px;
+        margin-top: 15px;
+    }
+
+    .hero p{
+        font-size: 18px;
+        margin-top: 10px;
     }
 
     .content .btn {
-        margin-top: 20px;
+        margin-top: 10px;
         align-self: center;
+        padding: 8px 18px;
     }
+
     .Judul{
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .services-container {
@@ -585,9 +593,61 @@ header.scrolled {
         width: 80%;
     }
 
-    .judul-porto{
-        font-size: 20px;
-        font-family: poppins;
-        font-weight: bold;
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .gallery-item img {
+        width: 100%; /* Ensure images take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .portfolio-slider-container {
+        width: 100%; /* Lebar slider disesuaikan dengan layar kecil */
+        margin: 0 auto;
+    }
+
+    .portfolio-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%; /* Sesuaikan dengan jumlah gambar, misalnya 3 gambar berarti 300% */
+    }
+
+    .portfolio-item {
+        min-width: 100%; /* Setiap item portofolio mengambil seluruh lebar kontainer */
+        box-sizing: border-box;
+    }
+
+    /* Mengubah ukuran tombol prev dan next agar lebih kecil di layar mobile */
+    button.prev, button.next {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    /* Sesuaikan ukuran font dan spacing */
+    .judul-porto {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .overlay span {
+        font-size: 16px;
+    }
+
+    /* Slider control juga lebih kecil */
+    .slider-controls {
+        margin-top: 5px;
+    }
+
+    .portfolio-item img {
+        width: 500px;
+        height: auto;
+        display: block;
+        transition: all 0.3s ease;
     }
 }
+
