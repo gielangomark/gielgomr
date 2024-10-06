@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=no">
     <title>GIELANG PORTOFOLIO</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -92,29 +92,31 @@
         </section>
 
         <!-- Portfolio Section -->
-        <div class="portfolio-section section">
-            <h2 class="judul-porto">My Portfolio</h2>
-            <div class="portfolio-slider-container">
-                <div class="portfolio-slider">
-                    <div class="portfolio-item">
-                        <img src="image/Project 1 (1).PNG" alt="Portfolio 1">
-                        <div class="overlay"><span>Project 1</span></div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/Project 2 (1).PNG" alt="Portfolio 2">
-                        <div class="overlay"><span>Project 2</span></div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/Project 3 (1).PNG" alt="Portfolio 3">
-                        <div class="overlay"><span>Project 3</span></div>
+        <section id="portfolio">
+            <div class="portfolio-section section">
+                <h2 class="judul-porto">My Portfolio</h2>
+                <div class="portfolio-slider-container">
+                    <div class="portfolio-slider">
+                        <div class="portfolio-item">
+                            <img src="image/Project 1 (1).PNG" alt="Portfolio 1">
+                            
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="image/Project 2 (1).PNG" alt="Portfolio 2">
+                            
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="image/Project 3 (1).PNG" alt="Portfolio 3">
+                           
+                        </div>
                     </div>
                 </div>
+                <div class="slider-controls">
+                    <button class="prev" onclick="prevSlide()">‹</button>
+                    <button class="next" onclick="nextSlide()">›</button>
+                </div>
             </div>
-            <div class="slider-controls">
-                <button class="prev" onclick="prevSlide()">‹</button>
-                <button class="next" onclick="nextSlide()">›</button>
-            </div>
-        </div>
+        </section>
         
     <!-- Footer Section -->
 <footer class="footer">
