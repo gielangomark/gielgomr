@@ -284,142 +284,290 @@ header.scrolled {
 }
 
 
+/* portfolio section */
 
-/* Portfolio Section */
-/* Container slider lebih kecil */
-
-.judul-porto {
-    font-size: 24px;
+/* Style for the Projects section */
+/* Style for the Projects section */
+#projects {
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+  }
+  
+  .section-heading {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.portfolio-slider-container {
-    width: 60%; 
-    margin: 0 auto;
-    overflow: hidden; 
-}
-
-.portfolio-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-    padding: 20px;
-}
-
-.portfolio-item {
-    flex: 0 0 auto; 
-    width: 110%; 
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    padding-right: 120px;
-}
-
-.portfolio-item img {
-    overflow: hidden;
-    padding: 10px;
-    width: 300%; 
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.portfolio-item img:hover {
-    background-color: #deebdb;
-}
-
-
-/* Kontrol slider di bawah gambar */
-.slider-controls {
-    display: flex;
-    justify-content: center;
-}
-
-button.prev, button.next {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 0 10px;
-    border-radius: 50%;
-}
-
-button.prev:hover, button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Mengatur ukuran tombol lebih kecil */
-button.prev, button.next {
-    width: 40px;
-    height: 40px;
-    line-height: 20px;
-    font-size: 16px;
-}
-
-.footer {
-    background-color: var(--secont-bg-color);
-    color: var(--text-color);
-    padding: 20px 10%;
+    font-size: 2.5rem;
+    color: #faf5f5;
+    margin-bottom: 40px;
+  }
+  
+  .all-items {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 30px; /* Spacing between project items */
+  }
+  
+  .item {
+    display: flex;
+    background: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s; /* Smooth scaling effect */
+  }
+  
+  
+  .left {
+    flex: 1;
+    position: relative; /* For absolute positioning of the img */
+  }
+  
+  .img {
+    overflow: hidden; /* To hide the overflow of the img on zoom */
+    border-radius: 8px 0 0 8px; /* Rounded corners only on left side */
+  }
+  
+  .img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s; /* Smooth zoom effect */
+  }
+  
+  .img:hover img {
+    transform: scale(1.1); /* Zoom in the image on hover */
+    cursor: pointer;
+  }
+  
+  .right {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements in the right section */
+  }
+  
+  .project-title {
+    font-size: 1.8rem;
+    color: #faf8f8;
+    margin: 0 0 5px;
+    font-weight: bold; /* Make title bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+  }
+  
+  .project-sub-title {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 0 15px;
+    font-style: italic; /* Italic style for subtitles */
+  }
+  
+  .project-desc {
+    font-size: 1rem;
+    color: #b59f9f;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Increase line height for better readability */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
+    margin-top: auto; /* Push buttons to the bottom */
+  }
+  
+  .primary-btn {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+  }
+  
+  .primary-btn:hover {
+    background-color: #c3486f; /* Darker red on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  .primary-btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: white;
+  }
+  
+  .primary-btn.outline:hover {
+    background-color: #c93b3b;
+    color: white;
+  }
+  
+  .external-link {
+    display: flex;
+    align-items: center; /* Center SVG vertically */
+  }
+  
+  svg {
+    margin-left: 5px; /* Spacing between text and icon */
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s; /* Smooth transition for icon */
+  }
+  
+  .external-link:hover svg {
+    transform: translateX(2px); /* Slide effect on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .all-items {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .item {
+      flex-direction: column; /* Stack left and right sections */
+    }
+  
+    .right {
+      padding: 15px; /* Reduce padding */
+    }
+  }
+  
+  .footer {
+    background-color: #2b2b2b; /* Warna latar belakang gelap */
+    color: #f1f1f1; /* Warna teks cerah */
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .footer-content {
-    width: 100%;
-    max-width: 1200px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Membuat konten responsif */
     margin-bottom: 20px;
 }
 
-.footer-content div {
-    flex: 1 1 300px;
-    margin: 0 10px;
+.education, .contact {
+    flex: 1;
+    padding: 0 20px; /* Padding horizontal */
+    min-width: 200px; /* Minimum lebar untuk responsivitas */
 }
 
-.footer-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.education h3, .contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff4757; /* Warna judul yang cerah */
 }
 
-.footer-content ul {
-    list-style-type: none;
+.education ul {
+    list-style: none;
     padding: 0;
 }
 
-.footer-content ul li {
-    margin-bottom: 5px;
+.education li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.education li span {
+    color: #888;
+    font-size: 0.9rem;
 }
 
 .social-media {
     display: flex;
-    justify-content: center; 
-    margin: 10px 0; 
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
 }
 
 .social-icon {
-    color: var(--text-color);
-    font-size: 34px;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.8rem; /* Ukuran ikon */
+    color: #ff4757; /* Warna ikon */
+    transition: transform 0.3s; /* Efek transformasi */
 }
 
 .social-icon:hover {
-    color: var(--main-color);
-    transform: scale(1.1);
+    transform: scale(1.2); /* Efek zoom pada hover */
+    color: #ff6348; /* Warna saat hover */
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 10px; 
+    margin-top: 20px;
 }
 
 .footer-bottom p {
-    font-size: 0.875rem;
-    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px){
+    .footer {
+        background-color: #2b2b2b; /* Warna latar belakang gelap */
+        color: #f1f1f1; /* Warna teks cerah */
+        padding: 30px 15px; /* Padding yang lebih kecil untuk mobile */
+        text-align: center;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Tata letak kolom untuk perangkat kecil */
+        margin-bottom: 20px;
+    }
+    
+    .education, .contact {
+        margin-bottom: 50px; /* Spasi antara bagian pendidikan dan kontak */
+    }
+    
+    .education h3, .contact h3 {
+        font-size: 1.6rem; /* Ukuran font yang lebih kecil */
+        margin-bottom: 10px;
+        color: #ff4757; /* Warna judul yang cerah */
+    }
+    
+    .education ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .education li {
+        margin-bottom: 5px; /* Spasi yang lebih kecil antara item */
+        font-size: 1rem; /* Ukuran font yang lebih kecil */
+    }
+    
+    .education li span {
+        color: #888;
+        font-size: 0.8rem; /* Ukuran font untuk tahun pendidikan */
+    }
+    
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Spasi antar ikon */
+        margin: 15px 0;
+    }
+    
+    .social-icon {
+        font-size: 37px;
+        color: #ff4757; 
+        transition: transform 0.3s; 
+    }
+    
+    .social-icon:hover {
+        transform: scale(1.2); 
+        color: #ff6348; 
+    }
+    
+    .footer-bottom {
+        margin-top: 15px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem; 
+        color: #bbb; 
+        margin-bottom: 10px;
+    }
+    
 }
 
 
@@ -483,15 +631,6 @@ button.prev, button.next {
     .gallery-item img {
         width: 300px;
     }
-
-    .portfolio-slider-container {
-        width: 70%;
-    }
-
-    .portfolio-item img {
-        width: 120%;
-        align-items: center;
-    }
 }
 
 /* Styles untuk layar 1024px */
@@ -529,15 +668,6 @@ button.prev, button.next {
 
     .gallery-item img {
         width: 280px;
-    }
-
-    .portfolio-slider-container {
-        width: 50%;
-    }
-
-    .portfolio-item img {
-        width: 110%;
-        margin-right: 40px;
     }
 }
 
@@ -649,7 +779,7 @@ button.prev, button.next {
     }
 
     .Judul {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .services-container {
@@ -668,55 +798,5 @@ button.prev, button.next {
     .gallery-item img {
         width: 100%; 
         height: auto; 
-    }
-
-    .portfolio-item {
-        flex: 0 0 100%;
-        padding-right: 0; 
-    }
-
-    .portfolio-slider {
-        width: 160%; 
-    }
-
-    /* Gambar di dalam slider */
-    .portfolio-item img {
-        width: 100%; 
-        height: auto; 
-        object-fit: cover; 
-    }
-
-    /* Kontrol slider di bawah gambar */
-    .slider-controls {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    button.prev, button.next {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        margin: 0 10px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button.prev:hover, button.next:hover {
-        background-color: #555;
-    }
-
-    /* Penyesuaian font pada judul portofolio */
-    .judul-porto {
-        font-size: 24px; 
-        margin-bottom: 20px;
-    }
-
-    /* Padding tambahan di slider container */
-    .portfolio-slider-container {
-        padding: 0 20px; 
     }
 }
